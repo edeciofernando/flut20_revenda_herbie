@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class MenuPesquisa extends SearchDelegate {
+class MenuPesquisa extends SearchDelegate<String> {
   @override
   List<Widget> buildActions(BuildContext context) {
     return [
@@ -20,12 +20,15 @@ class MenuPesquisa extends SearchDelegate {
         icon: AnimatedIcons.menu_arrow,
         progress: transitionAnimation,
       ),
-      onPressed: () {},
+      onPressed: () {
+        close(context, null);
+      },
     );
   }
 
   @override
   Widget buildResults(BuildContext context) {
+    Future.delayed(Duration.zero).then((_) => close(context, query));
     return Container();
   }
 

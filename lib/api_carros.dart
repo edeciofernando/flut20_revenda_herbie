@@ -27,4 +27,32 @@ class ApiCarros {
       throw Exception('Erro ao acessar WebService');
     }
   }
+
+  getCarrosDestaque() async {
+    var response = await http.get(url + '?filter[destaque]=true');
+
+    if (response.statusCode == 200) {
+      var lista = json.decode(response.body)['carros'];
+      List<Carro> carros =
+          lista.map<Carro>((carro) => Carro.fromJson(carro)).toList();
+      // print(carros);
+      return carros;
+    } else {
+      throw Exception('Erro ao acessar WebService');
+    }
+  }
+
+  getCarrosPesquisa(String palavra) async {
+    var response = await http.get(url + '?filter[modelo]=' + palavra);
+
+    if (response.statusCode == 200) {
+      var lista = json.decode(response.body)['carros'];
+      List<Carro> carros =
+          lista.map<Carro>((carro) => Carro.fromJson(carro)).toList();
+      // print(carros);
+      return carros;
+    } else {
+      throw Exception('Erro ao acessar WebService');
+    }
+  }
 }

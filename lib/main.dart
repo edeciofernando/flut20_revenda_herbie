@@ -2,7 +2,8 @@ import 'package:bloc_pattern/bloc_pattern.dart';
 import 'package:flutter/material.dart';
 import 'package:revenda_herbie/carros_bloc.dart';
 //import 'package:revenda_herbie/api_carros.dart';
-import 'package:revenda_herbie/home_page.dart';
+//import 'package:revenda_herbie/home_page.dart';
+import 'package:revenda_herbie/login_page.dart';
 
 void main() {
 //  ApiCarros apicarros = ApiCarros();
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Material App',
-        home: HomePage(),
+        home: LoginPage(),
       ),
     );
   }

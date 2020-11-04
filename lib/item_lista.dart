@@ -24,11 +24,11 @@ class ItemLista extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     Padding(
-                      padding: EdgeInsets.all(8),
+                      padding: EdgeInsets.fromLTRB(12, 4, 0, 0),
                       child: Text(carro.marca + ' ' + carro.modelo),
                     ),
                     Padding(
-                      padding: EdgeInsets.all(8),
+                      padding: EdgeInsets.fromLTRB(12, 4, 0, 12),
                       child: Text(
                           'Preço ${NumberFormat.simpleCurrency(locale: 'pt_BR').format(carro.preco)}'),
                     ),
